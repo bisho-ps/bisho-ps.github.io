@@ -114,20 +114,6 @@
         font-size: 24px;
         color: #FF9999;
     }
-    #mobile-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: black;
-        color: white;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        font-size: 24px;
-        z-index: 1000;
-    }
     @font-face {
         font-family: 'Crusades';
         src: url('Crusades.ttf') format('truetype');
@@ -138,6 +124,36 @@
         }
         to {
             opacity: 0;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        h1 {
+            font-size: 125px;
+        }
+
+        .textbox {
+            font-size: 14px;
+            width: 300px;
+        }
+        .links a {
+            font-size: 18px;
+        }
+        .members {
+            font-size: 18px;
+            line-height: 28px;
+        }
+        .divider-hr-left {
+            width: 20px;
+            border-width: 2.5px;
+        }
+        .divider-hr-right {
+            width: 200px;
+            border-width: 2.5px;
+        }
+        .divider-title {
+            font-size: 20px;
         }
     }
     @-webkit-keyframes flicker
@@ -152,13 +168,12 @@
 </style>
 </head>
 <body>
-<div id="mobile-overlay">Sorry, we aren't mobile responsive yet.</div>
 <div id="overlay">
     <div class="content">
         <p>Click to continue</p>
     </div>
 </div>
-<audio id="audio" src="" autoplay></audio>
+<audio id="audio" src="14.mp3" autoplay></audio>
 <div class="container">
     <h1>Bishop</h1>
     <div class="divider">
@@ -186,7 +201,6 @@
         <p><a href="https://t.me/ghostaliases" target="_blank">Pilot</a> &nbsp;<span id="cross">+</span>&nbsp; Member<br></p>
         <p><a href="https://t.me/a407c5a0edd2b150853cffcc6237952" target="_blank">Omen</a> &nbsp;<span id="cross">+</span>&nbsp; Member<br></p>
         <p><a href="https://t.me/grievingalways" target="_blank">Grief</a> &nbsp;<span id="cross">+</span>&nbsp; Member<br></p>
-        <p><a href="https://t.me/prof_knight" target="_blank">Knight</a> &nbsp;<span id="cross">+</span>&nbsp; Member<br></p>
     </div>
 </div>
 <script>
@@ -202,17 +216,6 @@
         audio.play();
     });
     });
-
-    function checkDevice() {
-      if (window.innerWidth < 1024) {
-        document.getElementById('mobile-overlay').style.display = 'flex';
-      } else {
-        document.getElementById('mobile-overlay').style.display = 'none';
-      }
-    }
-
-    window.onload = checkDevice;
-    window.onresize = checkDevice;
   </script>
 </body>
 </html>
